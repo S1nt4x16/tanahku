@@ -95,7 +95,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/btn_main_jual"
+                    android:id="@+id/btn_tambah_lahan"
                     android:layout_width="0dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
