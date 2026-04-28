@@ -112,7 +112,7 @@
             android:textColor="@color/gray_text"
             android:textSize="14sp"/>
         <TextView
-            android:id="@+id/tv_login_to_register"
+            android:id="@+id/tv_to_register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minHeight="48dp"

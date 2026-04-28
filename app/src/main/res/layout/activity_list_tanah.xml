@@ -8,7 +8,6 @@
     android:background="#F4F6F3"
     android:orientation="vertical">
 
-    <!-- Header hijau -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="150dp"
@@ -17,6 +16,16 @@
         android:paddingStart="20dp"
         android:paddingTop="24dp"
         android:paddingEnd="20dp">
+
+        <ImageButton
+            android:id="@+id/btn_back_list"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="-10dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_revert"
+            app:tint="#FFFFFF"
+            android:contentDescription="Back" />
 
         <TextView
             android:id="@+id/tv_list_greeting"
@@ -46,7 +55,6 @@
             android:textSize="13sp" />
     </LinearLayout>
 
-    <!-- Search bar -->
     <androidx.cardview.widget.CardView
         android:id="@+id/card_search_tanah"
         android:layout_width="match_parent"
@@ -72,9 +80,7 @@
             android:textSize="14sp" />
     </androidx.cardview.widget.CardView>
 
-    <!-- Filter / tab -->
     <HorizontalScrollView
-        android:id="@+id/hsv_filter_tanah"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
@@ -83,94 +89,17 @@
         android:scrollbars="none">
 
         <LinearLayout
-            android:id="@+id/layout_filter_tanah"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/btn_filter_semua"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:backgroundTint="#1B5E20"
-                android:text="Semua"
-                android:textColor="#FFFFFF"
-                android:textSize="12sp" />
-
-            <Button
-                android:id="@+id/btn_filter_shm"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginStart="8dp"
-                android:backgroundTint="#E8F5E9"
-                android:text="SHM"
-                android:textColor="#1B5E20"
-                android:textSize="12sp" />
-
-            <Button
-                android:id="@+id/btn_filter_hgb"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginStart="8dp"
-                android:backgroundTint="#E8F5E9"
-                android:text="HGB"
-                android:textColor="#1B5E20"
-                android:textSize="12sp" />
-
-            <Button
-                android:id="@+id/btn_filter_termurah"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginStart="8dp"
-                android:backgroundTint="#E8F5E9"
-                android:text="Termurah"
-                android:textColor="#1B5E20"
-                android:textSize="12sp" />
-
-            <Button
-                android:id="@+id/btn_filter_terdekat"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginStart="8dp"
-                android:backgroundTint="#E8F5E9"
-                android:text="Terdekat"
-                android:textColor="#1B5E20"
-                android:textSize="12sp" />
-
-            <Button
-                android:id="@+id/btn_filter_sawah"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginStart="8dp"
-                android:backgroundTint="#E8F5E9"
-                android:text="Sawah"
-                android:textColor="#1B5E20"
-                android:textSize="12sp" />
-
-            <Button
-                android:id="@+id/btn_filter_kavling"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginStart="8dp"
-                android:backgroundTint="#E8F5E9"
-                android:text="Kavling"
-                android:textColor="#1B5E20"
-                android:textSize="12sp" />
-
-            <Button
-                android:id="@+id/btn_filter_industri"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginStart="8dp"
-                android:backgroundTint="#E8F5E9"
-                android:text="Industri"
-                android:textColor="#1B5E20"
-                android:textSize="12sp" />
-
+            <Button android:id="@+id/btn_filter_semua" android:layout_width="wrap_content" android:layout_height="40dp" android:backgroundTint="#1B5E20" android:text="Semua" android:textColor="#FFFFFF" android:textSize="12sp" />
+            <Button android:id="@+id/btn_filter_shm" android:layout_width="wrap_content" android:layout_height="40dp" android:layout_marginStart="8dp" android:backgroundTint="#E8F5E9" android:text="SHM" android:textColor="#1B5E20" android:textSize="12sp" />
+            <Button android:id="@+id/btn_filter_hgb" android:layout_width="wrap_content" android:layout_height="40dp" android:layout_marginStart="8dp" android:backgroundTint="#E8F5E9" android:text="HGB" android:textColor="#1B5E20" android:textSize="12sp" />
+            <Button android:id="@+id/btn_filter_termurah" android:layout_width="wrap_content" android:layout_height="40dp" android:layout_marginStart="8dp" android:backgroundTint="#E8F5E9" android:text="Termurah" android:textColor="#1B5E20" android:textSize="12sp" />
         </LinearLayout>
     </HorizontalScrollView>
 
-    <!-- Info hasil -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -181,7 +110,6 @@
         android:paddingEnd="16dp">
 
         <TextView
-            android:id="@+id/tv_rekomendasi_tanah"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -191,7 +119,6 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tv_jumlah_listing"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="24 Tanah"
@@ -200,29 +127,21 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/tv_info_listing"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:text="Menampilkan tanah dengan legalitas dan informasi awal yang lengkap"
-        android:textColor="#777777"
-        android:textSize="12sp" />
-
-    <!-- RecyclerView -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_list_tanah"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="10dp"
-        android:layout_weight="1"
-        android:clipToPadding="false"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:paddingBottom="16dp"
-        tools:itemCount="4"
-        tools:listitem="@layout/item_tanah_card" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/card_tanah_include"
+                layout="@layout/item_tanah_card" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>

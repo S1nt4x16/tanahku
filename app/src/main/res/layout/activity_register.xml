@@ -25,6 +25,19 @@
             android:paddingBottom="40dp">
 
             <ImageView
+                android:id="@+id/btn_back_register"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="start"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="-20dp"
+                android:padding="8dp"
+                android:src="@android:drawable/ic_menu_revert"
+                app:tint="@android:color/white"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <ImageView
                 android:id="@+id/iv_logo_register"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
@@ -376,7 +389,7 @@
 
             <!-- Tombol Daftar -->
             <Button
-                android:id="@+id/btn_register"
+                android:id="@+id/btn_register_submit"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:layout_marginBottom="20dp"

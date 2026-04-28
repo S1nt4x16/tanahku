@@ -20,11 +20,13 @@
                 android:layout_height="180dp"
                 android:background="@drawable/bg_header_gradient"
                 android:padding="24dp">
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginTop="10dp"
+                    android:layout_alignParentStart="true">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -39,6 +41,24 @@
                         android:textStyle="bold"
                         android:textColor="@color/white" />
                 </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btn_to_profile"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="10dp"
+                    app:cardCornerRadius="22.5dp"
+                    app:cardElevation="0dp"
+                    app:cardBackgroundColor="#33FFFFFF">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="8dp"
+                        android:src="@android:drawable/ic_menu_myplaces"
+                        app:tint="@color/white" />
+                </androidx.cardview.widget.CardView>
+
             </RelativeLayout>
 
             <androidx.cardview.widget.CardView
@@ -66,7 +86,7 @@
                 android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/btn_main_beli"
+                    android:id="@+id/btn_lihat_semua"
                     android:layout_width="0dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
