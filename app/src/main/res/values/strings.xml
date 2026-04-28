@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Tanahku</string>
+    <string name="title_post_lahan">Post Lahan Baru</string>
+    <string name="label_judul_postingan">Judul Postingan</string>
+    <string name="hint_judul_postingan">Contoh: Lahan Strategis Depan Kampus</string>
+    <string name="label_harga_lahan">Harga (Rp)</string>
+    <string name="hint_harga_lahan">Masukkan nominal harga</string>
+    <string name="label_alamat_lahan">Alamat Lengkap Lahan</string>
+    <string name="hint_alamat_lahan">Tulis alamat lengkap...</string>
+    <string name="label_jenis_sertifikat">Jenis Sertifikat</string>
+    <string name="label_foto_lahan">Foto Lahan</string>
+    <string name="text_upload_photo">Klik untuk upload foto</string>
+    <string name="btn_submit_lahan">POSTING LAHAN SEKARANG</string>
+    <string name="desc_preview_lahan">Preview Foto Lahan</string>
+    <string name="desc_remove_photo">Hapus Foto</string>
 </resources>
