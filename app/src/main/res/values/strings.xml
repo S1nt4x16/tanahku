@@ -1,3 +1,79 @@
 <resources>
     <string name="app_name">Tanahku</string>
+    <string name="logo_description">Logo TanahKu</string>
+    <string name="app_name_splash">TanahKu</string>
+    <string name="slogan_splash">Platform Lahan Digital Terpercaya</string>
+    <string name="tagline_splash">Cari, Jual &amp; Investasi Lahan dengan Aman</string>
+    <string name="version_splash">v1.0.0 · UPN Veteran Jakarta 2026</string>
+
+    <!-- Register Activity -->
+    <string name="title_register">Buat Akun Baru</string>
+    <string name="subtitle_register">Bergabung dan kelola lahan Anda</string>
+    <string name="label_full_name">Nama Lengkap</string>
+    <string name="desc_icon_name">Ikon Nama</string>
+    <string name="hint_full_name">Masukkan nama lengkap</string>
+    <string name="label_phone">Nomor Telepon</string>
+    <string name="desc_icon_phone">Ikon Telepon</string>
+    <string name="hint_phone">08xx-xxxx-xxxx</string>
+    <string name="label_email">Email</string>
+    <string name="desc_icon_email">Ikon Email</string>
+    <string name="hint_email">contoh@email.com</string>
+    <string name="label_password">Kata Sandi</string>
+    <string name="desc_icon_password">Ikon Password</string>
+    <string name="hint_password">Minimal 8 karakter</string>
+    <string name="desc_toggle_password">Toggle Password</string>
+    <string name="label_confirm_password">Konfirmasi Kata Sandi</string>
+    <string name="desc_icon_confirm_password">Ikon Konfirmasi Password</string>
+    <string name="hint_confirm_password">Ulangi kata sandi</string>
+    <string name="desc_toggle_confirm_password">Toggle Konfirmasi Password</string>
+    <string name="error_password_mismatch">Kata sandi tidak cocok</string>
+    <string name="agree_to">Saya setuju dengan </string>
+    <string name="terms_and_conditions">Syarat &amp; Ketentuan</string>
+    <string name="btn_register">DAFTAR SEKARANG</string>
+    <string name="already_have_account">Sudah punya akun? </string>
+    <string name="login_now">Masuk Sekarang</string>
+
+    <!-- Login Activity -->
+    <string name="title_login">Selamat Datang</string>
+    <string name="subtitle_login">Masuk untuk kelola lahan terverifikasi</string>
+    <string name="hint_login_email">Email Anda</string>
+    <string name="hint_login_password">Password Anda</string>
+    <string name="forgot_password">Lupa Password?</string>
+    <string name="btn_login">MASUK KE TANAHKU</string>
+    <string name="dont_have_account">Belum punya akun?</string>
+    <string name="register_now"> Daftar Sekarang</string>
+
+    <!-- User Profile Activity -->
+    <string name="profile_photo_desc">Foto Profil</string>
+    <string name="edit_photo_desc">Edit Foto</string>
+    <string name="default_user_name">Nama Pengguna</string>
+    <string name="default_user_email">pengguna@email.com</string>
+    <string name="verified_label">✓ Terverifikasi</string>
+    <string name="label_lands_on_sale">Lahan Dijual</string>
+    <string name="label_sold">Terjual</string>
+    <string name="label_rating">Rating</string>
+    <string name="title_account_info">Informasi Akun</string>
+    <string name="edit_label">Edit</string>
+    <string name="title_my_lands">Lahan Saya</string>
+    <string name="see_all_label">Lihat Semua</string>
+    <string name="empty_lands_message">Belum ada lahan yang dijual</string>
+    <string name="btn_add_land">+ Tambah Lahan</string>
+    <string name="title_settings">Pengaturan</string>
+    <string name="menu_change_password">Ubah Kata Sandi</string>
+    <string name="menu_notifications">Notifikasi</string>
+    <string name="menu_help">Bantuan &amp; FAQ</string>
+    <string name="btn_logout_label">KELUAR</string>
+
+    <!-- Values & Symbols -->
+    <string name="default_count">0</string>
+    <string name="default_rating">5.0</string>
+    <string name="symbol_user">👤</string>
+    <string name="symbol_phone">📞</string>
+    <string name="symbol_email">✉</string>
+    <string name="symbol_plant">🌱</string>
+    <string name="symbol_lock">🔒</string>
+    <string name="symbol_notif">🔔</string>
+    <string name="symbol_help">❓</string>
+    <string name="symbol_arrow_right">›</string>
+    <string name="placeholder_dash">-</string>
 </resources>
