@@ -14,23 +14,27 @@
         android:layout_height="100dp"
         android:layout_marginTop="50dp"
         android:src="@android:drawable/ic_menu_myplaces"
-        app:tint="@color/primary_green" /> <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Selamat Datang"
-    android:textSize="26sp"
-    android:textStyle="bold"
-    android:textColor="@color/primary_green"
-    android:layout_marginTop="16dp"/>
+        android:contentDescription="@string/logo_description"
+        app:tint="@color/primary_green" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Masuk untuk kelola lahan terverifikasi"
+        android:text="@string/title_login"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="@color/primary_green"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/subtitle_login"
         android:textColor="@color/gray_text"
         android:textSize="14sp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="40dp"/>
+        android:layout_marginBottom="40dp"
+        android:gravity="center"/>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -42,8 +46,9 @@
             android:id="@+id/et_login_email"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:hint="Email Anda"
+            android:hint="@string/hint_login_email"
             android:inputType="textEmailAddress"
+            android:autofillHints="emailAddress"
             android:background="@android:color/transparent"
             android:paddingHorizontal="20dp"
             android:drawableStart="@android:drawable/ic_dialog_email"
@@ -61,8 +66,9 @@
             android:id="@+id/et_login_password"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:hint="Password Anda"
+            android:hint="@string/hint_login_password"
             android:inputType="textPassword"
+            android:autofillHints="password"
             android:background="@android:color/transparent"
             android:paddingHorizontal="20dp"
             android:drawableStart="@android:drawable/ic_lock_lock"
@@ -74,17 +80,21 @@
         android:id="@+id/tv_login_forgot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Lupa Password?"
+        android:minHeight="48dp"
+        android:gravity="center_vertical"
+        android:text="@string/forgot_password"
         android:textColor="@color/primary_green"
         android:textSize="12sp"
         android:layout_gravity="end"
-        android:layout_marginBottom="32dp"/>
+        android:layout_marginBottom="32dp"
+        android:clickable="true"
+        android:focusable="true"/>
 
     <Button
         android:id="@+id/btn_login_submit"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="MASUK KE TANAHKU"
+        android:text="@string/btn_login"
         android:textStyle="bold"
         android:textColor="@color/white"
         android:backgroundTint="@color/primary_green"
@@ -98,17 +108,21 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Belum punya akun?"
+            android:text="@string/dont_have_account"
             android:textColor="@color/gray_text"
             android:textSize="14sp"/>
         <TextView
             android:id="@+id/tv_login_to_register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=" Daftar Sekarang"
+            android:minHeight="48dp"
+            android:gravity="center_vertical"
+            android:text="@string/register_now"
             android:textColor="@color/primary_green"
             android:textStyle="bold"
-            android:textSize="14sp"/>
+            android:textSize="14sp"
+            android:clickable="true"
+            android:focusable="true"/>
     </LinearLayout>
 
 </LinearLayout>
