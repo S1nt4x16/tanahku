@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_bg"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="32dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_post_lahan"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="32dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_judul_postingan"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            android:layout_marginBottom="16dp">
+            <EditText
+                android:id="@+id/et_nama_lahan"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="@string/hint_judul_postingan"
+                android:inputType="text"
+                android:background="@android:color/transparent"
+                android:paddingHorizontal="20dp"
+                android:textSize="14sp"
+                android:importantForAutofill="no" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_harga_lahan"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            android:layout_marginBottom="16dp">
+            <EditText
+                android:id="@+id/et_harga_lahan"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="@string/hint_harga_lahan"
+                android:inputType="number"
+                android:background="@android:color/transparent"
+                android:paddingHorizontal="20dp"
+                android:textSize="14sp"
+                android:importantForAutofill="no" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_alamat_lahan"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            android:layout_marginBottom="16dp">
+            <EditText
+                android:id="@+id/et_alamat_lahan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="100dp"
+                android:hint="@string/hint_alamat_lahan"
+                android:inputType="textMultiLine"
+                android:gravity="top"
+                android:background="@android:color/transparent"
+                android:padding="20dp"
+                android:textSize="14sp"
+                android:importantForAutofill="no" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_jenis_sertifikat"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            android:layout_marginBottom="16dp">
+            <Spinner
+                android:id="@+id/spinner_sertifikat"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:paddingHorizontal="12dp" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_foto_lahan"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp"/>
+
+        <FrameLayout
+            android:id="@+id/container_upload_photo"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/bg_dashed_border"
+            android:layout_marginBottom="32dp">
+
+            <include layout="@layout/layout_upload_photo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/text_upload_photo"
+                android:textColor="@color/gray_text"
+                android:textSize="12sp"/>
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/btn_submit_lahan"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="@string/btn_submit_lahan"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:backgroundTint="#1B5E20"
+            app:cornerRadius="16dp"
+            android:layout_marginBottom="16dp"/>
+
+    </LinearLayout>
+</ScrollView>
