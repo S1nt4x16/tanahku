@@ -1,9 +1,7 @@
-package com.example.tanahku
+package com.example.tanahku.ui
 
 import android.app.Dialog
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.view.Window
@@ -11,6 +9,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.tanahku.R
 
 class DetailTanahActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
