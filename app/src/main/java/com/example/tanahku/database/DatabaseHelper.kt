@@ -40,7 +40,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
     }
 
     // FUNGSI INSERT (Update: Menambahkan parameter foto)
-    fun insertTanah(nama: String, harga: String, alamat: String, sertifikat: String, foto: String?): Long {
+    fun insertTanah(nama: String, harga: String, alamat: String, sertifikat: String, foto: String? = null): Long {
         val db = this.writableDatabase
         val contentValues = ContentValues().apply {
             put(COLUMN_NAMA, nama)

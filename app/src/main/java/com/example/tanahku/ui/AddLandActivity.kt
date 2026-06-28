@@ -49,7 +49,7 @@ class AddLandActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val result = dbHelper.insertTanah(nama, harga, alamat, sertifikat)
+            val result = dbHelper.insertTanah(nama, harga, alamat, sertifikat, null)
 
             if (result != -1L) {
                 Toast.makeText(this, "Lahan Anda berhasil diposting!", Toast.LENGTH_SHORT).show()

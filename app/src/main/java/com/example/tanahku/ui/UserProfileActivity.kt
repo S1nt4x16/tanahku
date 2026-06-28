@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.tanahku.R
 import com.example.tanahku.adapter.TanahAdapter
 import com.example.tanahku.database.DatabaseHelper
+import com.example.tanahku.model.Land
 
 class UserProfileActivity : AppCompatActivity() {
 
@@ -48,7 +49,8 @@ class UserProfileActivity : AppCompatActivity() {
         llEmptyListing = findViewById(R.id.ll_empty_listing)
         tvTotalListing = findViewById(R.id.tv_total_listing)
 
-        adapter = TanahAdapter(emptyList())
+        // Fix: Explicitly specify <Land> type and provide the required dbHelper argument
+        adapter = TanahAdapter(mutableListOf<Land>(), dbHelper)
         rvMyListings.layoutManager = LinearLayoutManager(this)
         rvMyListings.adapter = adapter
     }
