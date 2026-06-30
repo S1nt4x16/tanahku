@@ -1,5 +1,4 @@
 package com.example.tanahku.utils
-// ⚠️ GANTI: com.contoh.tanahku sesuai package name lo
 
 import java.security.MessageDigest
 
