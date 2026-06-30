@@ -36,23 +36,28 @@ class TanahAdapter(
     override fun onBindViewHolder(holder: TanahViewHolder, position: Int) {
         val land = listTanah[position]
         
-        // 3. Pemformatan Mata Uang (Currency Formatting)
         holder.tvHarga.text = formatRupiah(land.harga.toDoubleOrNull() ?: 0.0)
         holder.tvNama.text = land.nama
         holder.tvSertifikat.text = land.sertifikat
 
-        // 1. Penanganan Foto (Tampil Foto dari URI)
+        // 2. Perbaikan LandAdapter (Penanganan Foto & Try-Catch)
         if (!land.foto.isNullOrEmpty()) {
             try {
+                // Mencoba memuat gambar dari URI
                 holder.ivFoto.setImageURI(Uri.parse(land.foto))
+            } catch (e: SecurityException) {
+                // Sering terjadi jika izin persistable URI tidak diberikan atau hilang
+                e.printStackTrace()
+                holder.ivFoto.setImageResource(R.drawable.lahan_kavling)
             } catch (e: Exception) {
+                e.printStackTrace()
                 holder.ivFoto.setImageResource(R.drawable.lahan_kavling)
             }
         } else {
+            // Jika foto null atau kosong, tampilkan placeholder
             holder.ivFoto.setImageResource(R.drawable.lahan_kavling)
         }
 
-        // 2. Fitur Hapus (Delete Data)
         holder.btnDelete.setOnClickListener {
             val landId = land.id
             if (landId != null) {
@@ -79,7 +84,6 @@ class TanahAdapter(
         notifyDataSetChanged()
     }
 
-    // Helper Pemformatan Mata Uang (Rupiah)
     private fun formatRupiah(number: Double): String {
         val localeID = Locale("in", "ID")
         val formatRupiah = NumberFormat.getCurrencyInstance(localeID)

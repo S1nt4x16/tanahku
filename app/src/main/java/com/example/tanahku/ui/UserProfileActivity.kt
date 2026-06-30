@@ -27,7 +27,7 @@ class UserProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_profile)
 
-        dbHelper = DatabaseHelper(this)
+        dbHelper = DatabaseHelper.getInstance(this)
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar_profile)
         toolbar?.setNavigationOnClickListener {

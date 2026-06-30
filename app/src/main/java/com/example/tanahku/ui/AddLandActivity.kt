@@ -23,32 +23,25 @@ class AddLandActivity : AppCompatActivity() {
 
     private lateinit var dbHelper: DatabaseHelper
     private var selectedFotoUri: String? = null
-    
-    // 1. Inisialisasi ActivityResultLauncher untuk akses galeri
+
     private val pickMedia = registerForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri ->
         if (uri != null) {
             val ivPreview = findViewById<ImageView>(R.id.img_preview_lahan)
             val tvPlaceholder = findViewById<TextView>(R.id.tv_placeholder_hint)
             val btnRemove = findViewById<View>(R.id.btn_remove_photo)
 
-            // Ambil persistable permission agar foto bisa diakses lagi nanti
             try {
                 val takeFlags: Int = Intent.FLAG_GRANT_READ_URI_PERMISSION
                 contentResolver.takePersistableUriPermission(uri, takeFlags)
             } catch (e: Exception) {
-                // Mungkin sudah ada permission atau tidak didukung pada URI ini
             }
 
-            // Set Gambar
             ivPreview?.setImageURI(uri)
             selectedFotoUri = uri.toString()
 
-            // MANIPULASI TAMPILAN: Sembunyikan teks hint, munculkan tombol hapus
             tvPlaceholder?.visibility = View.GONE
             btnRemove?.visibility = View.VISIBLE
 
-            // Pastikan kontainer tidak lagi memiliki background border jika ingin terlihat clean
-            // findViewById<View>(R.id.container_upload_photo)?.setBackgroundResource(0)
         } else {
             Toast.makeText(this, "Tidak ada gambar yang dipilih", Toast.LENGTH_SHORT).show()
         }
@@ -60,7 +53,8 @@ class AddLandActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_land)
 
-        dbHelper = DatabaseHelper(this)
+        
+        dbHelper = DatabaseHelper.getInstance(this)
 
         setupToolbar()
         setupSpinner()
@@ -75,7 +69,7 @@ class AddLandActivity : AppCompatActivity() {
         }
     }
 
-    // 2. Setup Spinner (Dropdown Sertifikat)
+    // Dropdown Sertifikat
     private fun setupSpinner() {
         val spinnerSertifikat = findViewById<Spinner>(R.id.spinner_sertifikat)
         val options = arrayOf("SHM", "HGB", "Sertifikat Desa", "Lainnya")
@@ -99,7 +93,7 @@ class AddLandActivity : AppCompatActivity() {
             selectedFotoUri = null
             ivPreview?.setImageURI(null) // Hapus gambar
 
-            // Kembalikan ke tampilan awal
+
             tvPlaceholder?.visibility = View.VISIBLE
             btnRemove.visibility = View.GONE
         }
@@ -131,8 +125,9 @@ class AddLandActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // 3. Integrasi ke Database (Meneruskan selectedFotoUri)
             val result = dbHelper.insertTanah(nama, harga, alamat, sertifikat, selectedFotoUri)
+
+            android.util.Log.d("DATABASE_TEST", "Insert Result ID: $result")
 
             if (result != -1L) {
                 Toast.makeText(this, "Lahan Anda berhasil diposting!", Toast.LENGTH_SHORT).show()
