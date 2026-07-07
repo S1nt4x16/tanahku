@@ -169,19 +169,41 @@
         <FrameLayout
             android:id="@+id/container_upload_photo"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="180dp"
             android:background="@drawable/bg_dashed_border"
-            android:layout_marginBottom="32dp">
+            android:layout_marginBottom="32dp"
+            android:clickable="true"
+            android:focusable="true">
 
-            <include layout="@layout/layout_upload_photo" />
+            <ImageView
+                android:id="@+id/img_preview_lahan"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:contentDescription="Preview Lahan" />
 
             <TextView
+                android:id="@+id/tv_placeholder_hint"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="@string/text_upload_photo"
-                android:textColor="@color/gray_text"
-                android:textSize="12sp"/>
+                android:text="Klik untuk upload foto"
+                android:textColor="#808080"
+                android:textSize="14sp"
+                android:drawableTop="@android:drawable/ic_menu_gallery"
+                android:drawablePadding="8dp"
+                android:gravity="center"/>
+
+            <ImageButton
+                android:id="@+id/btn_remove_photo"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="top|end"
+                android:layout_margin="8dp"
+                android:background="@android:drawable/presence_offline"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                android:visibility="gone"
+                app:tint="@android:color/white" />
         </FrameLayout>
 
         <Button

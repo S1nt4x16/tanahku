@@ -27,6 +27,19 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/lahan_kavling" />
 
+            <ImageButton
+                android:id="@+id/btn_delete_tanah"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_gravity="top|start"
+                android:layout_margin="12dp"
+                android:background="@drawable/rounded_dialog_bg"
+                android:backgroundTint="#FFEBEE"
+                android:contentDescription="Hapus tanah"
+                android:padding="8dp"
+                android:src="@android:drawable/ic_menu_delete"
+                app:tint="#D32F2F" />
+
             <TextView
                 android:id="@+id/tv_badge_sertifikat"
                 android:layout_width="wrap_content"
