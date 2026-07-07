@@ -6,6 +6,13 @@
     <string name="tagline_splash">Cari, Jual &amp; Investasi Lahan dengan Aman</string>
     <string name="version_splash">v1.0.0 · UPN Veteran Jakarta 2026</string>
 
+    <!-- Main Dashboard -->
+    <string name="dashboard_title">Dashboard TanahKu</string>
+    <string name="dashboard_subtitle_focus">Fokus: Splash Screen &amp; Register</string>
+    <string name="btn_tambah_lahan_label">Tambah Lahan</string>
+    <string name="btn_lihat_semua_label">Lihat Semua Lahan</string>
+    <string name="btn_profil_saya_label">Profil Saya</string>
+
     <!-- Register Activity -->
     <string name="title_register">Buat Akun Baru</string>
     <string name="subtitle_register">Bergabung dan kelola lahan Anda</string>

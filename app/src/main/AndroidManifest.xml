@@ -16,7 +16,8 @@
 
         <activity
             android:name=".ui.SplashScreenActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -25,13 +26,18 @@
 
         <activity
             android:name=".ui.LoginActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Tanahku" />
+
+        <activity
+            android:name=".ui.RegisterActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Tanahku" />
 
         <activity
             android:name=".ui.MainActivity"
             android:exported="false" />
 
-        <activity android:name=".ui.RegisterActivity" android:exported="false" />
         <activity android:name=".ui.ListTanahActivity" android:exported="false" />
         <activity android:name=".ui.DetailTanahActivity" android:exported="false" />
         <activity android:name=".ui.AddLandActivity" android:exported="false" />

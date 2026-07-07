@@ -133,18 +133,18 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingStart="16dp"
-            android:paddingEnd="16dp"
             android:paddingTop="16dp"
+            android:paddingEnd="16dp"
             android:paddingBottom="80dp">
 
             <!-- Card: Statistik Pengguna -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="3dp"
+                android:layout_marginBottom="16dp"
                 app:cardBackgroundColor="@android:color/white"
-                android:layout_marginBottom="16dp">
+                app:cardCornerRadius="16dp"
+                app:cardElevation="3dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -157,88 +157,88 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:gravity="center">
+                        android:gravity="center"
+                        android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/tv_total_listing"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/default_count"
+                            android:textColor="#1B5E20"
                             android:textSize="24sp"
-                            android:textStyle="bold"
-                            android:textColor="#1B5E20" />
+                            android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/label_lands_on_sale"
-                            android:textSize="12sp"
-                            android:textColor="#777777" />
+                            android:textColor="#777777"
+                            android:textSize="12sp" />
 
                     </LinearLayout>
 
                     <View
                         android:layout_width="1dp"
                         android:layout_height="40dp"
-                        android:background="#E0E0E0"
-                        android:layout_gravity="center_vertical" />
+                        android:layout_gravity="center_vertical"
+                        android:background="#E0E0E0" />
 
                     <!-- Stat 2: Lahan Terjual -->
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:gravity="center">
+                        android:gravity="center"
+                        android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/tv_sold_listing"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/default_count"
+                            android:textColor="#1B5E20"
                             android:textSize="24sp"
-                            android:textStyle="bold"
-                            android:textColor="#1B5E20" />
+                            android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/label_sold"
-                            android:textSize="12sp"
-                            android:textColor="#777777" />
+                            android:textColor="#777777"
+                            android:textSize="12sp" />
 
                     </LinearLayout>
 
                     <View
                         android:layout_width="1dp"
                         android:layout_height="40dp"
-                        android:background="#E0E0E0"
-                        android:layout_gravity="center_vertical" />
+                        android:layout_gravity="center_vertical"
+                        android:background="#E0E0E0" />
 
                     <!-- Stat 3: Rating -->
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:gravity="center">
+                        android:gravity="center"
+                        android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/tv_rating"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/default_rating"
+                            android:textColor="#1B5E20"
                             android:textSize="24sp"
-                            android:textStyle="bold"
-                            android:textColor="#1B5E20" />
+                            android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/label_rating"
-                            android:textSize="12sp"
-                            android:textColor="#777777" />
+                            android:textColor="#777777"
+                            android:textSize="12sp" />
 
                     </LinearLayout>
 
@@ -250,10 +250,10 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="3dp"
+                android:layout_marginBottom="16dp"
                 app:cardBackgroundColor="@android:color/white"
-                android:layout_marginBottom="16dp">
+                app:cardCornerRadius="16dp"
+                app:cardElevation="3dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -264,48 +264,48 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
                         android:text="@string/title_account_info"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
                         android:textColor="#222222"
-                        android:layout_marginBottom="12dp" />
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
                     <!-- Item: Nama -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
                         android:gravity="center_vertical"
-                        android:minHeight="48dp">
+                        android:minHeight="48dp"
+                        android:orientation="horizontal">
 
                         <TextView
                             android:layout_width="20dp"
                             android:layout_height="20dp"
-                            android:text="@string/symbol_user"
                             android:gravity="center"
+                            android:text="@string/symbol_user"
                             android:textSize="14sp" />
 
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
                             android:layout_weight="1"
-                            android:orientation="vertical"
-                            android:layout_marginStart="12dp">
+                            android:orientation="vertical">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/label_full_name"
-                                android:textSize="11sp"
-                                android:textColor="#888888" />
+                                android:textColor="#888888"
+                                android:textSize="11sp" />
 
                             <TextView
                                 android:id="@+id/tv_info_name"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/placeholder_dash"
-                                android:textSize="14sp"
-                                android:textColor="#333333" />
+                                android:textColor="#333333"
+                                android:textSize="14sp" />
 
                         </LinearLayout>
 
@@ -313,54 +313,57 @@
                             android:id="@+id/iv_edit_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/edit_label"
-                            android:textSize="12sp"
-                            android:textColor="#1B5E20"
                             android:clickable="true"
                             android:focusable="true"
+                            android:gravity="center_vertical"
                             android:minHeight="48dp"
-                            android:gravity="center_vertical" />
+                            android:text="@string/edit_label"
+                            android:textColor="#1B5E20"
+                            android:textSize="12sp" />
 
                     </LinearLayout>
 
-                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F0F0F0" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#F0F0F0" />
 
                     <!-- Item: Telepon -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
                         android:gravity="center_vertical"
-                        android:minHeight="48dp">
+                        android:minHeight="48dp"
+                        android:orientation="horizontal">
 
                         <TextView
                             android:layout_width="20dp"
                             android:layout_height="20dp"
-                            android:text="@string/symbol_phone"
                             android:gravity="center"
+                            android:text="@string/symbol_phone"
                             android:textSize="14sp" />
 
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
                             android:layout_weight="1"
-                            android:orientation="vertical"
-                            android:layout_marginStart="12dp">
+                            android:orientation="vertical">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/label_phone"
-                                android:textSize="11sp"
-                                android:textColor="#888888" />
+                                android:textColor="#888888"
+                                android:textSize="11sp" />
 
                             <TextView
                                 android:id="@+id/tv_info_phone"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/placeholder_dash"
-                                android:textSize="14sp"
-                                android:textColor="#333333" />
+                                android:textColor="#333333"
+                                android:textSize="14sp" />
 
                         </LinearLayout>
 
@@ -368,54 +371,57 @@
                             android:id="@+id/iv_edit_phone"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/edit_label"
-                            android:textSize="12sp"
-                            android:textColor="#1B5E20"
                             android:clickable="true"
                             android:focusable="true"
+                            android:gravity="center_vertical"
                             android:minHeight="48dp"
-                            android:gravity="center_vertical" />
+                            android:text="@string/edit_label"
+                            android:textColor="#1B5E20"
+                            android:textSize="12sp" />
 
                     </LinearLayout>
 
-                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F0F0F0" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#F0F0F0" />
 
                     <!-- Item: Email -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
                         android:gravity="center_vertical"
-                        android:minHeight="48dp">
+                        android:minHeight="48dp"
+                        android:orientation="horizontal">
 
                         <TextView
                             android:layout_width="20dp"
                             android:layout_height="20dp"
-                            android:text="@string/symbol_email"
                             android:gravity="center"
+                            android:text="@string/symbol_email"
                             android:textSize="14sp" />
 
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
                             android:layout_weight="1"
-                            android:orientation="vertical"
-                            android:layout_marginStart="12dp">
+                            android:orientation="vertical">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/label_email"
-                                android:textSize="11sp"
-                                android:textColor="#888888" />
+                                android:textColor="#888888"
+                                android:textSize="11sp" />
 
                             <TextView
                                 android:id="@+id/tv_info_email"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/placeholder_dash"
-                                android:textSize="14sp"
-                                android:textColor="#333333" />
+                                android:textColor="#333333"
+                                android:textSize="14sp" />
 
                         </LinearLayout>
 
@@ -429,30 +435,30 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_marginBottom="12dp"
                 android:gravity="center_vertical"
-                android:layout_marginBottom="12dp">
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/title_my_lands"
+                    android:textColor="#222222"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="#222222" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tv_see_all_land"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/see_all_label"
-                    android:textSize="13sp"
-                    android:textColor="#1B5E20"
                     android:clickable="true"
                     android:focusable="true"
+                    android:gravity="center_vertical"
                     android:minHeight="48dp"
-                    android:gravity="center_vertical" />
+                    android:text="@string/see_all_label"
+                    android:textColor="#1B5E20"
+                    android:textSize="13sp" />
 
             </LinearLayout>
 
@@ -461,43 +467,43 @@
                 android:id="@+id/rv_my_listings"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:nestedScrollingEnabled="false"
-                android:layout_marginBottom="16dp" />
+                android:layout_marginBottom="16dp"
+                android:nestedScrollingEnabled="false" />
 
             <!-- Empty state -->
             <LinearLayout
                 android:id="@+id/ll_empty_listing"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:gravity="center"
+                android:orientation="vertical"
                 android:padding="24dp"
                 android:visibility="gone">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/symbol_plant"
-                    android:textSize="48sp"
+                    android:alpha="0.5"
                     android:gravity="center"
-                    android:alpha="0.5" />
+                    android:text="@string/symbol_plant"
+                    android:textSize="48sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
                     android:text="@string/empty_lands_message"
-                    android:textSize="14sp"
                     android:textColor="#999999"
-                    android:layout_marginTop="12dp" />
+                    android:textSize="14sp" />
 
                 <Button
                     android:id="@+id/btn_add_first_land"
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
                     android:text="@string/btn_add_land"
                     android:textColor="@android:color/white"
-                    app:backgroundTint="#1B5E20"
-                    android:layout_marginTop="12dp" />
+                    app:backgroundTint="#1B5E20" />
 
             </LinearLayout>
 
@@ -505,10 +511,10 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="3dp"
+                android:layout_marginBottom="16dp"
                 app:cardBackgroundColor="@android:color/white"
-                android:layout_marginBottom="16dp">
+                app:cardCornerRadius="16dp"
+                app:cardElevation="3dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -519,121 +525,127 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
                         android:text="@string/title_settings"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
                         android:textColor="#222222"
-                        android:layout_marginBottom="8dp" />
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
                     <!-- Menu: Ubah Password -->
                     <LinearLayout
                         android:id="@+id/ll_change_password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
                         android:clickable="true"
                         android:focusable="true"
-                        android:minHeight="48dp">
+                        android:gravity="center_vertical"
+                        android:minHeight="48dp"
+                        android:orientation="horizontal">
 
                         <TextView
                             android:layout_width="20dp"
                             android:layout_height="20dp"
-                            android:text="@string/symbol_lock"
                             android:gravity="center"
+                            android:text="@string/symbol_lock"
                             android:textSize="13sp" />
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
                             android:layout_weight="1"
                             android:text="@string/menu_change_password"
-                            android:textSize="14sp"
                             android:textColor="#333333"
-                            android:layout_marginStart="12dp" />
+                            android:textSize="14sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/symbol_arrow_right"
-                            android:textSize="20sp"
-                            android:textColor="#AAAAAA" />
+                            android:textColor="#AAAAAA"
+                            android:textSize="20sp" />
 
                     </LinearLayout>
 
-                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F0F0F0" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#F0F0F0" />
 
                     <!-- Menu: Notifikasi -->
                     <LinearLayout
                         android:id="@+id/ll_notifications"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
                         android:clickable="true"
                         android:focusable="true"
-                        android:minHeight="48dp">
+                        android:gravity="center_vertical"
+                        android:minHeight="48dp"
+                        android:orientation="horizontal">
 
                         <TextView
                             android:layout_width="20dp"
                             android:layout_height="20dp"
-                            android:text="@string/symbol_notif"
                             android:gravity="center"
+                            android:text="@string/symbol_notif"
                             android:textSize="13sp" />
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
                             android:layout_weight="1"
                             android:text="@string/menu_notifications"
-                            android:textSize="14sp"
                             android:textColor="#333333"
-                            android:layout_marginStart="12dp" />
+                            android:textSize="14sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/symbol_arrow_right"
-                            android:textSize="20sp"
-                            android:textColor="#AAAAAA" />
+                            android:textColor="#AAAAAA"
+                            android:textSize="20sp" />
 
                     </LinearLayout>
 
-                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F0F0F0" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#F0F0F0" />
 
                     <!-- Menu: Bantuan -->
                     <LinearLayout
                         android:id="@+id/ll_help"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
                         android:clickable="true"
                         android:focusable="true"
-                        android:minHeight="48dp">
+                        android:gravity="center_vertical"
+                        android:minHeight="48dp"
+                        android:orientation="horizontal">
 
                         <TextView
                             android:layout_width="20dp"
                             android:layout_height="20dp"
-                            android:text="@string/symbol_help"
                             android:gravity="center"
+                            android:text="@string/symbol_help"
                             android:textSize="13sp" />
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
                             android:layout_weight="1"
                             android:text="@string/menu_help"
-                            android:textSize="14sp"
                             android:textColor="#333333"
-                            android:layout_marginStart="12dp" />
+                            android:textSize="14sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/symbol_arrow_right"
-                            android:textSize="20sp"
-                            android:textColor="#AAAAAA" />
+                            android:textColor="#AAAAAA"
+                            android:textSize="20sp" />
 
                     </LinearLayout>
 
@@ -644,13 +656,13 @@
             <!-- Tombol Logout -->
             <Button
                 android:id="@+id/btn_logout"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:text="@string/btn_logout_label"
+                android:textColor="#D32F2F"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:textColor="#D32F2F"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 app:strokeColor="#D32F2F" />
 
         </LinearLayout>

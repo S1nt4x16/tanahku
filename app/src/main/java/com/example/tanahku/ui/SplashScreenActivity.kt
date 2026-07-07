@@ -8,15 +8,21 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.tanahku.R
 
 class SplashScreenActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash_screen) // Pastiin ID XML-nya bener
+        setContentView(R.layout.activity_splash_screen)
 
-        // Delay 3 detik (3000ms) baru pindah ke Login/Main
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, MainActivity::class.java)
+
+            val intent = Intent(
+                this@SplashScreenActivity,
+                LoginActivity::class.java
+            )
+
             startActivity(intent)
-            finish() // Biar pas di-back nggak balik ke splash lagi
+            finish()
+
         }, 3000)
     }
 }

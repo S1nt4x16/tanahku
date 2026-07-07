@@ -56,24 +56,52 @@
             android:textSize="14sp"/>
     </androidx.cardview.widget.CardView>
 
+    <!-- PASSWORD FIELD + TOGGLE -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="16dp"
         app:cardElevation="2dp"
         android:layout_marginBottom="8dp">
-        <EditText
-            android:id="@+id/et_login_password"
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:hint="@string/hint_login_password"
-            android:inputType="textPassword"
-            android:autofillHints="password"
-            android:background="@android:color/transparent"
-            android:paddingHorizontal="20dp"
-            android:drawableStart="@android:drawable/ic_lock_lock"
-            android:drawablePadding="12dp"
-            android:textSize="14sp"/>
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="0dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@android:drawable/ic_lock_lock"
+                android:contentDescription="@string/desc_icon_password" />
+
+            <EditText
+                android:id="@+id/et_login_password"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:hint="@string/hint_login_password"
+                android:inputType="textPassword"
+                android:autofillHints="password"
+                android:background="@android:color/transparent"
+                android:paddingStart="12dp"
+                android:paddingEnd="4dp"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/iv_toggle_password_login"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:padding="13dp"
+                android:src="@android:drawable/ic_menu_view"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Toggle password" />
+
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
 
     <TextView
