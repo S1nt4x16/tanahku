@@ -11,7 +11,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tanahku.R
-import com.example.tanahku.data.DatabaseHelper
+import com.example.tanahku.database.DatabaseHelper // <-- INI UDAH DIBENERIN KE FOLDER DATABASE
 import com.example.tanahku.utils.PasswordUtils
 
 class RegisterActivity : AppCompatActivity() {
@@ -39,7 +39,8 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        dbHelper = DatabaseHelper(this)
+        // INI UDAH DIBENERIN PAKE getInstance()
+        dbHelper = DatabaseHelper.getInstance(this)
 
         // ID sesuai activity_register.xml yang ada di project
         etName = findViewById(R.id.et_full_name)
@@ -65,7 +66,6 @@ class RegisterActivity : AppCompatActivity() {
 
         tvTermsLink.setOnClickListener {
             Toast.makeText(this, "Buka halaman Syarat & Ketentuan", Toast.LENGTH_SHORT).show()
-            // TODO: ganti dengan Intent ke halaman/dialog Syarat & Ketentuan beneran
         }
 
         ivTogglePassword.setOnClickListener {

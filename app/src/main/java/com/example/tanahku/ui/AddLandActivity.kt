@@ -34,6 +34,7 @@ class AddLandActivity : AppCompatActivity() {
                 val takeFlags: Int = Intent.FLAG_GRANT_READ_URI_PERMISSION
                 contentResolver.takePersistableUriPermission(uri, takeFlags)
             } catch (e: Exception) {
+                e.printStackTrace()
             }
 
             ivPreview?.setImageURI(uri)
@@ -46,14 +47,11 @@ class AddLandActivity : AppCompatActivity() {
             Toast.makeText(this, "Tidak ada gambar yang dipilih", Toast.LENGTH_SHORT).show()
         }
     }
-    
-    
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_land)
 
-        
         dbHelper = DatabaseHelper.getInstance(this)
 
         setupToolbar()
@@ -69,11 +67,10 @@ class AddLandActivity : AppCompatActivity() {
         }
     }
 
-    // Dropdown Sertifikat
     private fun setupSpinner() {
         val spinnerSertifikat = findViewById<Spinner>(R.id.spinner_sertifikat)
         val options = arrayOf("SHM", "HGB", "Sertifikat Desa", "Lainnya")
-        
+
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, options)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerSertifikat.adapter = adapter
@@ -91,18 +88,21 @@ class AddLandActivity : AppCompatActivity() {
 
         btnRemove?.setOnClickListener {
             selectedFotoUri = null
-            ivPreview?.setImageURI(null) // Hapus gambar
-
+            ivPreview?.setImageURI(null)
 
             tvPlaceholder?.visibility = View.VISIBLE
             btnRemove.visibility = View.GONE
         }
     }
 
+    // ==========================================
+    // SIMULASI SMART AUTO-FILL (AI OCR)
+    // ==========================================
     private fun setupOCR() {
         findViewById<Button>(R.id.btn_scan_ocr)?.setOnClickListener {
-            Toast.makeText(this, "AI sedang memverifikasi Sertifikat...", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "AI sedang memverifikasi Dokumen/Sertifikat...", Toast.LENGTH_SHORT).show()
 
+            // Simulasi delay biar kelihatan sistem lagi "mikir"
             Handler(Looper.getMainLooper()).postDelayed({
                 findViewById<EditText>(R.id.et_nama_lahan)?.setText("Tanah Kavling Margonda Permai")
                 findViewById<EditText>(R.id.et_harga_lahan)?.setText("1250000000")
@@ -126,8 +126,6 @@ class AddLandActivity : AppCompatActivity() {
             }
 
             val result = dbHelper.insertTanah(nama, harga, alamat, sertifikat, selectedFotoUri)
-
-            android.util.Log.d("DATABASE_TEST", "Insert Result ID: $result")
 
             if (result != -1L) {
                 Toast.makeText(this, "Lahan Anda berhasil diposting!", Toast.LENGTH_SHORT).show()

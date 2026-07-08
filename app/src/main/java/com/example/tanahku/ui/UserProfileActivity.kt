@@ -1,5 +1,6 @@
 package com.example.tanahku.ui
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -13,15 +14,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.tanahku.R
 import com.example.tanahku.adapter.TanahAdapter
 import com.example.tanahku.database.DatabaseHelper
-import com.example.tanahku.model.Land
 
 class UserProfileActivity : AppCompatActivity() {
 
     private lateinit var dbHelper: DatabaseHelper
     private lateinit var adapter: TanahAdapter
-    private lateinit var rvMyListings: RecyclerView
-    private lateinit var llEmptyListing: LinearLayout
-    private lateinit var tvTotalListing: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,49 +26,77 @@ class UserProfileActivity : AppCompatActivity() {
 
         dbHelper = DatabaseHelper.getInstance(this)
 
+        // 1. Setup Toolbar
         val toolbar = findViewById<Toolbar>(R.id.toolbar_profile)
-        toolbar?.setNavigationOnClickListener {
-            finish()
-        }
+        setSupportActionBar(toolbar)
 
-        setupRecyclerView()
-        loadUserLands()
+        // TAMBAHIN BARIS INI BUAT NGILANGIN TULISAN "TanahKu"
+        supportActionBar?.setDisplayShowTitleEnabled(false)
 
+        toolbar?.setNavigationOnClickListener { finish() }
+
+        // 2. Load User Data dari Database
+        loadUserData()
+
+        // 3. Setup RecyclerView buat list tanah
+        val rv = findViewById<RecyclerView>(R.id.rv_my_listings)
+        adapter = TanahAdapter(mutableListOf(), dbHelper)
+        rv.layoutManager = LinearLayoutManager(this)
+        rv.adapter = adapter
+
+        // 4. Fitur Logout (Hapus session)
         findViewById<Button>(R.id.btn_logout)?.setOnClickListener {
+            getSharedPreferences("TanahKuSession", Context.MODE_PRIVATE).edit().clear().apply()
+
             val intent = Intent(this, LoginActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
+            finish()
+        }
+
+        loadData()
+    }
+
+    private fun loadUserData() {
+        // Ambil email user yang lagi login
+        val sharedPref = getSharedPreferences("TanahKuSession", Context.MODE_PRIVATE)
+        val emailSession = sharedPref.getString("USER_EMAIL", "") ?: ""
+
+        if (emailSession.isNotEmpty()) {
+            val userData = dbHelper.getUserByEmail(emailSession)
+            if (userData != null) {
+                // Tembak data ke XML
+                findViewById<TextView>(R.id.tv_profile_name)?.text = userData["name"]
+                findViewById<TextView>(R.id.tv_profile_email)?.text = userData["email"]
+
+                findViewById<TextView>(R.id.tv_info_name)?.text = userData["name"]
+                findViewById<TextView>(R.id.tv_info_phone)?.text = userData["phone"]
+                findViewById<TextView>(R.id.tv_info_email)?.text = userData["email"]
+            }
         }
     }
 
-    private fun setupRecyclerView() {
-        rvMyListings = findViewById(R.id.rv_my_listings)
-        llEmptyListing = findViewById(R.id.ll_empty_listing)
-        tvTotalListing = findViewById(R.id.tv_total_listing)
-
-        // Fix: Explicitly specify <Land> type and provide the required dbHelper argument
-        adapter = TanahAdapter(mutableListOf<Land>(), dbHelper)
-        rvMyListings.layoutManager = LinearLayoutManager(this)
-        rvMyListings.adapter = adapter
-    }
-
-    private fun loadUserLands() {
+    private fun loadData() {
         val listTanah = dbHelper.getAllTanah()
-        
+        val llEmpty = findViewById<LinearLayout>(R.id.ll_empty_listing)
+        val tvTotal = findViewById<TextView>(R.id.tv_total_listing)
+        val rv = findViewById<RecyclerView>(R.id.rv_my_listings)
+
         if (listTanah.isEmpty()) {
-            rvMyListings.visibility = View.GONE
-            llEmptyListing.visibility = View.VISIBLE
-            tvTotalListing.text = "0"
+            rv.visibility = View.GONE
+            llEmpty.visibility = View.VISIBLE
+            tvTotal.text = "0"
         } else {
-            rvMyListings.visibility = View.VISIBLE
-            llEmptyListing.visibility = View.GONE
+            rv.visibility = View.VISIBLE
+            llEmpty.visibility = View.GONE
             adapter.updateData(listTanah)
-            tvTotalListing.text = listTanah.size.toString()
+            tvTotal.text = listTanah.size.toString()
         }
     }
 
     override fun onResume() {
         super.onResume()
-        loadUserLands() // Refresh data when returning to profile
+        loadData()
+        loadUserData() // Refresh data user juga barangkali butuh
     }
 }

@@ -1,9 +1,12 @@
 package com.example.tanahku.adapter
 
+import android.app.AlertDialog
+import android.content.Intent
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
@@ -12,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.tanahku.R
 import com.example.tanahku.database.DatabaseHelper
 import com.example.tanahku.model.Land
+import com.example.tanahku.ui.DetailTanahActivity
 import java.text.NumberFormat
 import java.util.Locale
 
@@ -26,6 +30,9 @@ class TanahAdapter(
         val tvHarga: TextView = itemView.findViewById(R.id.tv_harga_tanah)
         val tvSertifikat: TextView = itemView.findViewById(R.id.tv_badge_sertifikat)
         val btnDelete: ImageButton = itemView.findViewById(R.id.btn_delete_tanah)
+
+        // INI DIA YANG KETINGGALAN: Daftarin tombol "Lihat Detail" dari XML lu
+        val btnDetail: Button = itemView.findViewById(R.id.btn_lihat_detail)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TanahViewHolder {
@@ -35,45 +42,71 @@ class TanahAdapter(
 
     override fun onBindViewHolder(holder: TanahViewHolder, position: Int) {
         val land = listTanah[position]
-        
-        holder.tvHarga.text = formatRupiah(land.harga.toDoubleOrNull() ?: 0.0)
+        val context = holder.itemView.context
+
+        val hargaFormat = formatRupiah(land.harga.toDoubleOrNull() ?: 0.0)
+        holder.tvHarga.text = hargaFormat
         holder.tvNama.text = land.nama
         holder.tvSertifikat.text = land.sertifikat
 
-        // 2. Perbaikan LandAdapter (Penanganan Foto & Try-Catch)
+        // Penanganan Foto
         if (!land.foto.isNullOrEmpty()) {
             try {
-                // Mencoba memuat gambar dari URI
                 holder.ivFoto.setImageURI(Uri.parse(land.foto))
-            } catch (e: SecurityException) {
-                // Sering terjadi jika izin persistable URI tidak diberikan atau hilang
-                e.printStackTrace()
-                holder.ivFoto.setImageResource(R.drawable.lahan_kavling)
             } catch (e: Exception) {
-                e.printStackTrace()
                 holder.ivFoto.setImageResource(R.drawable.lahan_kavling)
             }
         } else {
-            // Jika foto null atau kosong, tampilkan placeholder
             holder.ivFoto.setImageResource(R.drawable.lahan_kavling)
         }
 
-        holder.btnDelete.setOnClickListener {
-            val landId = land.id
-            if (landId != null) {
-                val success = dbHelper.deleteTanah(landId)
-                if (success > 0) {
-                    val currentPos = holder.adapterPosition
-                    if (currentPos != RecyclerView.NO_POSITION) {
-                        listTanah.removeAt(currentPos)
-                        notifyItemRemoved(currentPos)
-                        notifyItemRangeChanged(currentPos, listTanah.size)
-                        Toast.makeText(holder.itemView.context, "Lahan berhasil dihapus", Toast.LENGTH_SHORT).show()
-                    }
-                } else {
-                    Toast.makeText(holder.itemView.context, "Gagal menghapus data", Toast.LENGTH_SHORT).show()
-                }
+        // ==========================================
+        // 1. FUNGSI KLIK SEKARANG ADA DI TOMBOL DETAIL
+        // ==========================================
+        holder.btnDetail.setOnClickListener {
+            val intent = Intent(context, DetailTanahActivity::class.java).apply {
+                putExtra("EXTRA_NAMA_TANAH", land.nama)
+                putExtra("EXTRA_HARGA_TANAH", hargaFormat)
+                putExtra("EXTRA_FOTO_URI", land.foto)
             }
+            context.startActivity(intent)
+        }
+
+        // Opsional: Biar kalau user klik sembarang di luar tombol (di area kartunya) juga tetep masuk ke detail
+        holder.itemView.setOnClickListener {
+            holder.btnDetail.performClick()
+        }
+
+        // ==========================================
+        // 2. FITUR HAPUS DENGAN KONFIRMASI
+        // ==========================================
+        holder.btnDelete.setOnClickListener {
+            AlertDialog.Builder(context)
+                .setTitle("Hapus Lahan")
+                .setMessage("Apakah Anda yakin ingin menghapus '${land.nama}' dari listing?")
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setPositiveButton("Ya, Hapus") { dialog, _ ->
+                    val landId = land.id
+                    if (landId != null) {
+                        val success = dbHelper.deleteTanah(landId)
+                        if (success > 0) {
+                            val currentPos = holder.adapterPosition
+                            if (currentPos != RecyclerView.NO_POSITION) {
+                                listTanah.removeAt(currentPos)
+                                notifyItemRemoved(currentPos)
+                                notifyItemRangeChanged(currentPos, listTanah.size)
+                                Toast.makeText(context, "Lahan berhasil dihapus", Toast.LENGTH_SHORT).show()
+                            }
+                        } else {
+                            Toast.makeText(context, "Gagal menghapus data", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                    dialog.dismiss()
+                }
+                .setNegativeButton("Batal") { dialog, _ ->
+                    dialog.dismiss()
+                }
+                .show()
         }
     }
 
